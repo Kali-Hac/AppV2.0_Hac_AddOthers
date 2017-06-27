@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.anarchy.qqpresentation.MainActivity">
+
+    <com.anarchy.qqpresentation.presentation.PresentationLayout
+        android:id="@+id/presentation"
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+        <com.anarchy.qqpresentation.presentation.PortraitWrapper
+            android:id="@id/portrait"
+            app:SecondHaloColor="#96ffffff"
+            app:FirstHaloColor="#a5ffffff"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.anarchy.qqpresentation.presentation.CircleImageView
+                android:layout_width="90dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/yuan"
+                android:layout_height="90dp"/>
+        </com.anarchy.qqpresentation.presentation.PortraitWrapper>
+
+    </com.anarchy.qqpresentation.presentation.PresentationLayout>
+</RelativeLayout>
