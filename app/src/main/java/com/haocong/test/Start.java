@@ -127,6 +127,7 @@ public class Start extends Activity {
                     Intent intent=new Intent();
                     intent.setClass(Start.this,LocationActivity.class);
                     intent.putExtra("personal_address",address.getText().toString());
+                    intent.putExtra("first","no");
                     if(!ys)
                         intent.putExtra("yanshi","no");
                     Start.this.startActivity(intent);
@@ -331,6 +332,10 @@ public class Start extends Activity {
 
         });
         circleMenu.openMenu();
+        if(!address.getText().toString().equals("")) {
+            set = true;
+            yaoyiyao.setChecked(true);
+        }
         yanshi.setChecked(true);
         String bwl_number=db2.count_bwl()+"";
         bwl_num.setText("      备忘录条数："+bwl_number);
@@ -384,7 +389,8 @@ public class Start extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    windows(4);
+                    if(!set)
+                         windows(4);
                 } else {
                     set=false;
                 }
@@ -396,10 +402,10 @@ public class Start extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-
                     ys=true;
                 } else {
-                    ys=false;
+                    if(ys)
+                        ys=false;
                     windows(7);
                 }
 
