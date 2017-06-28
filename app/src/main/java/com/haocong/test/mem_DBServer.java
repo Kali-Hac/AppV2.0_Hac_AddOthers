@@ -166,7 +166,8 @@ public class mem_DBServer{
     public int count_mem(){
         SQLiteDatabase LocalDatabase=mem_dbHelper.getReadableDatabase();
         int Count = 0;
-        Cursor cursor = LocalDatabase.rawQuery("select count(*) from mem_table where name is not '加速度阈值' " , null);
+        Cursor cursor = LocalDatabase.rawQuery("select count(*) from mem_table where name is not '加速度阈值' and  phone_type is not '用户信息1' " +
+                " and  phone_type is not '用户信息2'  and  phone_type is not '用户信息3' and  phone_type is not '用户信息4'" , null);
         cursor.moveToFirst();
         Count=cursor.getInt(0);
         LocalDatabase.close();
