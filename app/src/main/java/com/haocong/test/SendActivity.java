@@ -121,6 +121,7 @@ public class SendActivity extends Activity {
             {
 
             }
+//            "编号","是否设置","姓名","号码","方式"
             else if(msg.what==1)
             {
                 String search_info=search_msg.getText().toString();
@@ -139,7 +140,7 @@ public class SendActivity extends Activity {
                         String data="";
                         arr=db.FindMemBySet_or_not(search_info);
                         for(int i=0;i<arr.size();i++){
-                            sendSMSMessage(t.getPhone_num(),infos);
+                            sendSMSMessage(arr.get(i).getPhone_num(),infos);
                             Toast.makeText(SendActivity.this, "成功发送短信给->"+arr.get(i).getName(), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -147,7 +148,7 @@ public class SendActivity extends Activity {
                         String data="";
                         arr=db.FindMemByName(search_info);
                         for(int i=0;i<arr.size();i++){
-                            sendSMSMessage(t.getPhone_num(),infos);
+                            sendSMSMessage(arr.get(i).getPhone_num(),infos);
                             Toast.makeText(SendActivity.this, "成功发送短信给->"+arr.get(i).getName(), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -155,7 +156,7 @@ public class SendActivity extends Activity {
                         String data="";
                         arr=db.FindMemByPhone_num(search_info);
                         for(int i=0;i<arr.size();i++){
-                            sendSMSMessage(t.getPhone_num(),infos);
+                            sendSMSMessage(arr.get(i).getPhone_num(),infos);
                             Toast.makeText(SendActivity.this, "成功发送短信给->"+arr.get(i).getName(), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -163,7 +164,7 @@ public class SendActivity extends Activity {
                         String data="";
                         arr=db.FindMemByPhone_type(search_info);
                         for(int i=0;i<arr.size();i++){
-                            sendSMSMessage(t.getPhone_num(),infos);
+                            sendSMSMessage(arr.get(i).getPhone_num(),infos);
                             Toast.makeText(SendActivity.this, "成功发送短信给->"+arr.get(i).getName(), Toast.LENGTH_LONG).show();
                         }
                     }
