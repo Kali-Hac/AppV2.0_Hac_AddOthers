@@ -28,15 +28,15 @@
         >
     <Spinner
         android:id="@+id/address_spinner"
-        android:layout_width="match_parent"
         android:textSize="@dimen/p8"
+        android:layout_width="80dp"
         android:fontFamily="Condensed bold"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="7"
+        android:ems="8"
         android:inputType="textPersonName" />
         <Button
             android:layout_marginLeft="@dimen/p4"
